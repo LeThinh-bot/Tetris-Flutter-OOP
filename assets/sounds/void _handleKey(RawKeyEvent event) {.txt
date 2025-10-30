@@ -1,0 +1,13 @@
+void _handleKey(RawKeyEvent event) {
+  if (event is RawKeyDownEvent) {
+    final k = event.logicalKey;
+    if (k == LogicalKeyboardKey.arrowLeft) _moveLeft();
+    else if (k == LogicalKeyboardKey.arrowRight) _moveRight();
+    else if (k == LogicalKeyboardKey.arrowDown) _softDrop();
+    else if (k == LogicalKeyboardKey.space) _hardDrop();
+    else if (k == LogicalKeyboardKey.arrowUp) _rotate();
+    else if (k == LogicalKeyboardKey.keyP) _togglePause();
+    else if (k == LogicalKeyboardKey.keyR) _restart();
+    // Không xử lý các phím khác như Caps Lock!
+  }
+}
